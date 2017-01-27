@@ -22,6 +22,7 @@ function display_output(){
 #This function displays 
 
 function show_backup(){
+<<<<<<< HEAD
 	tar -cf websitebackup.tar /var/www/
 	echo "/var/www/ successfully backed up.">$OUTPUT 
 	display_output 10 30 "Backup"
@@ -35,6 +36,12 @@ function show_update(){
 	display_output 10 30 "Updates"
 }
 
+=======
+	tar -cvfz websitebackup.tar.gz /var/www/>$OUTPUT 
+	display_output 10 30 "Backup"
+}
+
+>>>>>>> 7849483... Added an incomplete version of a script that uses GNU Dialog to perform administrative tasks.  The first one on the script is backing up /var/www/
 # set infinite loop
 while true 
 do
@@ -47,15 +54,22 @@ letter of the choice as a hot key, or the \n\
 number keys 1-9 to choose an option.\n\
 Choose the TASK" 15 50 2 \
 Backup "Backs up the web directory" \
+<<<<<<< HEAD
 Update "Updates Software on the System" \
+=======
+>>>>>>> 7849483... Added an incomplete version of a script that uses GNU Dialog to perform administrative tasks.  The first one on the script is backing up /var/www/
 Exit "Exits to the shell" 2>"${INPUT}"
 
 menuitem=$(<"${INPUT}") 
 
 #make decision
 case $menuitem in
+<<<<<<< HEAD
 	Backup) show_backup;;
 	Update) show_update;;
+=======
+	Backup) run backup;;
+>>>>>>> 7849483... Added an incomplete version of a script that uses GNU Dialog to perform administrative tasks.  The first one on the script is backing up /var/www/
 	Exit) echo "Bye"; break;;
 
 esac
