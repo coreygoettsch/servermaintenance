@@ -22,8 +22,17 @@ function display_output(){
 #This function displays 
 
 function show_backup(){
-	tar -cvfz websitebackup.tar.gz /var/www/>$OUTPUT 
+	tar -cf websitebackup.tar /var/www/
+	echo "/var/www/ successfully backed up.">$OUTPUT 
 	display_output 10 30 "Backup"
+}
+
+TODAYSDATE=`date`
+
+function show_update(){
+	yum update -y
+	echo "Software Updates Run.">$OUTPUT
+	display_output 10 30 "Updates"
 }
 
 # set infinite loop
@@ -38,13 +47,15 @@ letter of the choice as a hot key, or the \n\
 number keys 1-9 to choose an option.\n\
 Choose the TASK" 15 50 2 \
 Backup "Backs up the web directory" \
+Update "Updates Software on the System" \
 Exit "Exits to the shell" 2>"${INPUT}"
 
 menuitem=$(<"${INPUT}") 
 
 #make decision
 case $menuitem in
-	Backup) run backup;;
+	Backup) show_backup;;
+	Update) show_update;;
 	Exit) echo "Bye"; break;;
 
 esac
