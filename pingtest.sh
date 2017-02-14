@@ -1,6 +1,11 @@
 #! /bin/bash
 
-# Argument 1 ($1) is the server's url, and Argument 2 ($2)is the email address to which an error message should be sent
+# Example use: ./pingtest.sh url email@address.com
+
+# Arguments
+# $1 is the url of the website to be tested
+# $2 is the email address that will receive a warning if the test fails
+
 
 DATE=`date`
 
