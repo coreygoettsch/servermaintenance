@@ -130,7 +130,7 @@ else echo "Something has gone wrong."
 fi
 }
 
-Beginning of Script
+# Beginning of Script
 
 if [ $(whoami) =  "root" ] ; then 
 	echo "Welcome to the User Maintenance Program."
