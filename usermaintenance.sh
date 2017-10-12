@@ -8,7 +8,7 @@
 function list_users() {
 echo "Listing users on this system."
 echo "The format is: User Userid"
-awk -F':' '$3>=500 {print $1 " " $3}' /etc/passwd
+awk -F':' '$3>=1000 {print $1 " " $3}' /etc/passwd
 } 
 function list_groups() {
 echo "Please type the name of the user."
@@ -91,7 +91,7 @@ echo "Giving $username administrator privileges...."
 usermod -aG wheel $username 2>/dev/null
 if [ $? != 0 ] ;then 
 	usermod -aG sudo $username 2>/dev/null
-elif [$? != 0 ]; then
+elif [$? != 0 ] ; then
 	usermod -aG admin $username 2>/dev/null
 fi
 if [ $? -eq 0 ] ; then

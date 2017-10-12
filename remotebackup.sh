@@ -16,5 +16,8 @@ echo "Remote Backup Beginning at $DATE"
 echo "Connecting to remote server."
 ssh  $1@$2 "cd $3 && tar cvfz $HOME/$4.tar.gz ."
 scp $1@$2:/home/$1/$4.tar.gz .
-echo "Backup Completed."
+if [ $? -eq 0 ] ; then
+	echo "Backup Completed on $DATE."
+	else echo "Backup Failed on $DATE."
+fi 
 
