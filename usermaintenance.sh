@@ -2,7 +2,7 @@
 
 # This script simplifies a system administrator's management of users
 # by automating some of the common tasks
-
+# This script requires dialog and aide to be installed
 # Global Functions
 
 function list_users() {
