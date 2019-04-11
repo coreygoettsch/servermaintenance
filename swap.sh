@@ -56,5 +56,4 @@ function activateswap () {
 		--text="Activating"\
 		--text="Activating Swapfile"
 	swapon /$Swapfile
-	if 
 
